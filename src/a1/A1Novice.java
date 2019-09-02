@@ -1,5 +1,6 @@
 package a1;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class A1Novice {
@@ -31,7 +32,8 @@ public class A1Novice {
 				double totalPrice = price * many;
 				total += totalPrice;
 			}
-			System.out.println(fi + ". " + lastName + ": " + total);
+			DecimalFormat formatter = new DecimalFormat("#0.00");
+			System.out.println(fi + ". " + lastName + ": " + formatter.format(total));
 		}
 		scan.close();
 	}
