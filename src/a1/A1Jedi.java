@@ -30,6 +30,7 @@ public class A1Jedi {
 			String firstName = scan.next();
 			String lastName = scan.next();
 			int itemsCount = scan.nextInt();
+			boolean[] repeat = new boolean[itemTypes];
 			
 			//gets the total number of item types for each customer
 			
@@ -43,8 +44,11 @@ public class A1Jedi {
 					
 					if (itemName.equals(itemNames[k])) {
 						itemsPurchased[k] += itemNumber;
-						buyerCount[k] += 1;
 						
+						if (!repeat[k]) {
+							buyerCount[k] += 1;
+							repeat[k] = true;
+						}						
 						//takes the item name, compares it to the master list, and adds
 						//the item number to number of items purchased, and also does the
 						//the same, but always adding one, to get buyer count
